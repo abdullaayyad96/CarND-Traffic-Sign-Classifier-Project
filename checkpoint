@@ -1,2 +1,3 @@
-model_checkpoint_path: "lenet_traffc_sign_clasifier"
-all_model_checkpoint_paths: "lenet_traffc_sign_clasifier"
+model_checkpoint_path: "Traffic_Sign_Classifier_LeNet"
+all_model_checkpoint_paths: "lenet"
+all_model_checkpoint_paths: "Traffic_Sign_Classifier_LeNet"
