@@ -83,9 +83,9 @@ The third step is grayscaling the training set; since grayscaling was observed t
 
 ![alt_text][image5]
 
-##### 1.4 Grayscaling
+##### 1.4 Normalization
 
-As a last step, the training, validation and testing set images were normalized as normalization showed great performance enhancements. The normalization method was straigh forward by using the following equation: (pixel_value - 128)/128
+As a last step, the training, validation and testing set images were normalized since this showed great performance enhancements. The normalization method was straigh forward by using the following equation: (pixel_value - 128)/128
 
 #### 2. Model architecture
 
