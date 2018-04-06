@@ -27,8 +27,8 @@ The goals / steps of this project are the following:
 [image8]: ./Images/additional_images_result.jpg "Classification results for additional images"
 [image9]: ./Images/softmax_probabilities.jpg "Softmax probabilites for the Additional images"
 [image10]: ./Images/vis_sample_img.jpg "Sample Image for NN Visualization"
-[image11]: ./Images/first_covnet_lay.jpg "First CNN Layer Visualization"
-[image12]: ./Images/second_covnet_lay.jpg "Second CNN Layer Visualization"
+[image11]: ./Images/first_covnet_layer.png "First CNN Layer Visualization"
+[image12]: ./Images/second_covnet_layer.png "Second CNN Layer Visualization"
 
 
 ## Rubric Points
@@ -190,7 +190,19 @@ The code for making predictions on my final model is located in the 28th and 29t
 
 The model is fairly certain of all classification even for the incorrect cases. In general, the poorest performance is  the speed sign number identification, which might indicate the unsuitability of the model for number identification.
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+A random image from the training set was used to visualize the convolutional layers of the NN model. Below are the sample image used along with the output of the first and second convolutional layers:
+
+![alt_text][image10]
+
+* First covnet:
+![alt_text][image11]
+
+* Second covnet:
+![alt_text][image12]
+
+
 
 
