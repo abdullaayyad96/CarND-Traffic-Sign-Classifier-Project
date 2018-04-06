@@ -19,8 +19,8 @@ The goals / steps of this project are the following:
 
 [image1]: ./Images/sample_data.jpg "Visualization"
 [image2]: ./Images/training_set_bar.jpg "Training Set Distribution"
-[image3]: ./Images/data_aug_sample.jpg " Augmentation"
-[image4]: ./Images/training_augmented_Set_bar.jpg "Distribution after Augmentation"
+[image3]: ./Images/data_aug_sample.jpg "Augmentation"
+[image4]: ./Images/training_augmented_set_bar.jpg "Distribution after Augmentation"
 [image5]: ./Images/data_gray_sample.jpg "Grayscaling"
 [image6]: ./Images/testing_set_sample.jpg "Testing Results"
 [image7]: ./Images/additional_images.jpg "Additional Images for testing"
@@ -65,7 +65,7 @@ The bar chart below shows the distribution of the training set data across the 4
 
 ##### 1.1 Augmentation
 
-As a first step, I decided to apply augmentation due to the high degree of differance in represenation between different classes. Three techniques were used to generate additional data: Prespective transformation, translation and rotation. These methods are randomly applied in order to have a minimum number of training samples for each class. A sample outcome of the augmentation process can be seen here:
+As a first step, I decided to apply augmentation due to the high degree of differance in represenation between different classes. Three techniques were used to generate additional data: Prespective transformation, translation and rotation. The aforementiond augmentation methods were applied using the openCV library and were randomly applied in order to have a minimum number of training samples for each class. A sample outcome of the augmentation process can be seen here:
 
 ![alt text][image3]
 
@@ -87,27 +87,58 @@ The third step is grayscaling the training set; since grayscaling was observed t
 
 As a last step, the training, validation and testing set images were normalized as normalization showed great perfomance enhancements. The normalization method was straigh forward by using the following equation: (pixel_value - 128)/128
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Model architecture
 
-My final model consisted of the following layers:
+In my code, I've implemented and tested two architecture. The first is the LeNet architecture with the addition of Dropout stage for the fully connected layers as can be seen below:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| HxWxC image   							| 
+| Convolution     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Max pooling	      	| 2x2 window, 2x2 stride,  outputs 14x14x6 				|
+| Convolution 	    | 1x1 stride, valid padding, outputs 10x10x16 	|
+| RELU   |               |
+| Max pooling	      	| 2x2 window, 2x2 stride,  outputs 5x5x16 				|
+| Flatten       |   outputs 400   |
+| Fully connected		|  outputs 120    |
+| RELU      |          |
+| Dropout   |         |
+| Fully connected		|  outputs 84    |
+| RELU      |          |
+| Dropout   |         |
+| Classifier		|  outputs (number of classes)    |
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+Another architecture was also implemented. This one follows a similar architecture to the one described in this [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) In which the outout of two convolutional layers are fed into fully connected layer as seen below:
 
-To train the model, I used an ....
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| HxWxC image   							| 
+| Convolution     	| 1x1 stride, valid padding, outputs 28x28x30 	|
+| RELU					|												|
+| Max pooling	      	| 3x3 window, 2x2 stride,  outputs 14x14x30 				|
+| Convolution 	    | 1x1 stride, valid padding, outputs 10x10x64 	|
+| RELU    |               |
+| Max pooling	      	| 2x2 stride,  outputs 5x5x64 				|
+| Flatten       |   outputs: 5880 + 1600   |
+| Concatenate | outputs 7480  |
+| Fully connected		|  outputs 120    |
+| RELU      |          |
+| Dropout   |         |
+| Classifier		|  outputs (number of classes)    |
+
+Upon testing, the second architecture yielded better results thus it was chosen for the final design. The LeNet architecture is still present in the code for referance and possible future enhancements.
+
+#### 3. Model Optimizer & Parameters
+
+The optimizer utilized in this project is the standard [Adam Optimizer](https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer) included in the tensor flow library.
+The hyperparameters were tuned in a trial and error method and the final used parameters are:
+Batch size: 128
+EPOCHS: 20
+Learning rate: 0.0005
+
+Past commits prior to "Deleted unnecessary files" Include HTML files indicating the performance under different parameters.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
