@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 [image5]: ./Images/data_gray_sample.jpg "Grayscaling"
 [image6]: ./Images/testing_set_sample.jpg "Testing Results"
 [image7]: ./Images/additional_images.jpg "Additional Images for testing"
-[image8]: ./Images/addtional_images_result.jpg "Classification results for additional images"
+[image8]: ./Images/additional_images_result.jpg "Classification results for additional images"
 [image9]: ./Images/softmax_probabilities.jpg "Softmax probabilites for the Additional images"
 [image10]: ./Images/vis_sample_img.jpg "Sample Image for NN Visualization"
 [image11]: ./Images/first_covnet_lay.jpg "First CNN Layer Visualization"
@@ -81,7 +81,7 @@ Prior to proceeding with preprocessing and training process, training data were 
 
 The third step is grayscaling the training set; since grayscaling was observed to enhance the performance of the NN. The following figure shows few samples of the grayscaling process.
 
-[!alt_text][image5]
+![alt_text][image5]
 
 ##### 1.4 Grayscaling
 
@@ -143,11 +143,12 @@ Past commits prior to "Deleted unnecessary files" Include HTML files indicating 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.996
+* validation set accuracy of 0.966
+* test set accuracy of 0.948
 
 If an iterative approach was chosen:
+
 * What was the first architecture that was tried and why was it chosen?
 * What were some problems with the initial architecture?
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
@@ -158,50 +159,36 @@ If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
-### Test a Model on New Images
+The figure below shows random samples of the testing set along with the NN model output:
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+![alt_text][image6]
 
-Here are five German traffic signs that I found on the web:
+### Testing the Model on New Images
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+#### 1. Choose new German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-The first image might be difficult to classify because ...
+Below are the German traffic signs I found on the web:
+
+![alt text][image7]
+
+The images used are fairly clear in order to better understand the strengths/weakness of NN in classifying different types of signs rather than estimation under differernt conditions.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+![alt_text][image8]
 
+The model was able to correctly guess 8 of the 10 traffic signs, which gives an accuracy of 80%. This is not an ideal accuracy compared to the testing accuracy of 94.8%. Nonetheless, The mistakes that occured were in detecting the actual numbers on the speed signs even though it identified the images as speed signs. This clearly indicates the main shortcoming of the NN model as number classification as it performed perfectly otherwise. Possible improvement that can be done in the future is seperately applying the LeNet architecture on images that were identified as speed signs. 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+#### 3. Describe how certain the model is when predicting on each of the  new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The code for making predictions on my final model is located in the 28th and 29th cell of the Ipython notebook. The softmax probabilities for classifications can be seen below:
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+![alt_text][image9]
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+The model is fairly certain of all classification even for the incorrect cases. In general, the poorest performance is  the speed sign number identification, which might indicate the unsuitability of the model for number identification.
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
