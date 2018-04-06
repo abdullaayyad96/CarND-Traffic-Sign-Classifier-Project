@@ -55,7 +55,7 @@ Samples from the training set can be seen below:
 
 ![alt text][image1]
 
-The bar chart below shows the distribution of the training set data across the 43 possible classes. It can easily be observed that some labels are more represented than others.
+The following bar chart shows the distribution of the training set data across the 43 possible classes. It can easily be observed that some labels are more represented than others.
 
 ![alt text][image2]
 
@@ -89,7 +89,7 @@ As a last step, the training, validation and testing set images were normalized 
 
 #### 2. Model architecture
 
-In my code, I've implemented and tested two architecture. The first is the LeNet architecture with the addition of Dropout stage for the fully connected layers as can be seen below:
+In my code, I've implemented and tested two architecture. The first is the LeNet architecture with the addition of Dropout stage for the fully connected layers as can be seen here:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -120,7 +120,7 @@ Another architecture was also implemented. This one follows a similar architectu
 | Max pooling	      	| 3x3 window, 2x2 stride,  outputs 14x14x30 				|
 | Convolution 	    | 1x1 stride, valid padding, outputs 10x10x64 	|
 | RELU    |               |
-| Max pooling	      	| 2x2 stride,  outputs 5x5x64 				|
+| Max pooling	      	| 3x3 window, 2x2 stride,  outputs 5x5x64 				|
 | Flatten       |   outputs: 5880 + 1600   |
 | Concatenate | outputs 7480  |
 | Fully connected		|  outputs 120    |
@@ -140,26 +140,18 @@ Learning rate: 0.0005
 
 Past commits prior to "Deleted unnecessary files" Include HTML files indicating the performance under different parameters.
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Final Model & Architecture.
 
-My final model results were:
+The first architecture tested was the pure LeNet architecture due to its familiarity and simple design. The first problem noticed in this architecture was the difference between the evaluation accuracy of the training set and the validation and testing sets which indicated overfitting. Intuitively, the first approach to tackle this problem was to implement Dropout method for the fully connected layers of the architecture. While this greatly reduced the gap in the accuracy of different data sets, the validation and testing set accuracy did not exceed the minimum requirement of 0.93 no matter how much the LeNet layers or hyperparameters were tuned. Thus the need for another architecture was clear.
+
+The final architecture used was inspired by the one described in this [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) in which the output of two convolutional layers were fed into a fully connected classifier. The intuition behind this approach is that classifier would use both high level and low level features obtained from both CovNet layers in order to reach a final decision. The paper describes the effectiveness and positive results obtained from this method for traffic sign classification and thus I decided to implement it as well. Upon testing the architecture it indeed yielded much better and consistent results than the LeNet architecture especially when Dropout was utilized and a larger max pooling window og 3x3 was used.
+
+My final model results can be seen in the outputs of the 19th and 20th block of the jupyter notebook as shown below:
 * training set accuracy of 0.996
 * validation set accuracy of 0.966
 * test set accuracy of 0.948
 
-If an iterative approach was chosen:
-
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-
-The figure below shows random samples of the testing set along with the NN model output:
+The following figure shows random samples of the testing set along with the NN model output:
 
 ![alt_text][image6]
 
@@ -187,12 +179,12 @@ The code for making predictions on my final model is located in the 28th and 29t
 
 ![alt_text][image9]
 
-The model is fairly certain of all classification even for the incorrect cases. In general, the poorest performance is  the speed sign number identification, which might indicate the unsuitability of the model for number identification.
+The model is quite certain of all classification even for the incorrect cases. In general, the poorest performance is  the speed sign number identification, which might indicate the unsuitability of the model for number identification.
 
 
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-A random image from the training set was used to visualize the convolutional layers of the NN model. Below are the sample image used along with the output of the first and second convolutional layers:
+A random image from the training set was used to visualize the convolutional layers of the NN model. Here is the sample image used along with the output of the first and second convolutional layers:
 
 ![alt_text][image10]
 
