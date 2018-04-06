@@ -65,7 +65,7 @@ The bar chart below shows the distribution of the training set data across the 4
 
 ##### 1.1 Augmentation
 
-As a first step, I decided to apply augmentation due to the high degree of differance in represenation between different classes. Three techniques were used to generate additional data: Prespective transformation, translation and rotation. The aforementiond augmentation methods were applied using the openCV library and were randomly applied in order to have a minimum number of training samples for each class. A sample outcome of the augmentation process can be seen here:
+As a first step, I decided to apply augmentation due to the high degree of difference in representation between different classes. Three techniques were used to generate additional data: Perspective transformation, translation and rotation. The aforementioned augmentation methods were applied using the openCV library and were randomly applied in order to have a minimum number of training samples for each class. A sample outcome of the augmentation process can be seen here:
 
 ![alt text][image3]
 
@@ -85,7 +85,7 @@ The third step is grayscaling the training set; since grayscaling was observed t
 
 ##### 1.4 Grayscaling
 
-As a last step, the training, validation and testing set images were normalized as normalization showed great perfomance enhancements. The normalization method was straigh forward by using the following equation: (pixel_value - 128)/128
+As a last step, the training, validation and testing set images were normalized as normalization showed great performance enhancements. The normalization method was straigh forward by using the following equation: (pixel_value - 128)/128
 
 #### 2. Model architecture
 
@@ -110,7 +110,7 @@ In my code, I've implemented and tested two architecture. The first is the LeNet
 | Classifier		|  outputs (number of classes)    |
 
 
-Another architecture was also implemented. This one follows a similar architecture to the one described in this [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) In which the outout of two convolutional layers are fed into fully connected layer as seen below:
+Another architecture was also implemented. This one follows a similar architecture to the one described in this [paper](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf) In which the output of two convolutional layers are fed into fully connected layer as seen below:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -128,7 +128,7 @@ Another architecture was also implemented. This one follows a similar architectu
 | Dropout   |         |
 | Classifier		|  outputs (number of classes)    |
 
-Upon testing, the second architecture yielded better results thus it was chosen for the final design. The LeNet architecture is still present in the code for referance and possible future enhancements.
+Upon testing, the second architecture yielded better results thus it was chosen for the final design. The LeNet architecture is still present in the code for reference and possible future enhancements.
 
 #### 3. Model Optimizer & Parameters
 
@@ -154,7 +154,6 @@ If an iterative approach was chosen:
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
 If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
@@ -172,7 +171,7 @@ Below are the German traffic signs I found on the web:
 
 ![alt text][image7]
 
-The images used are fairly clear in order to better understand the strengths/weakness of NN in classifying different types of signs rather than estimation under differernt conditions.
+The images used are fairly clear in order to better understand the strengths/weakness of NN in classifying different types of signs rather than estimation under different conditions.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -180,7 +179,7 @@ Here are the results of the prediction:
 
 ![alt_text][image8]
 
-The model was able to correctly guess 8 of the 10 traffic signs, which gives an accuracy of 80%. This is not an ideal accuracy compared to the testing accuracy of 94.8%. Nonetheless, The mistakes that occured were in detecting the actual numbers on the speed signs even though it identified the images as speed signs. This clearly indicates the main shortcoming of the NN model as number classification as it performed perfectly otherwise. Possible improvement that can be done in the future is seperately applying the LeNet architecture on images that were identified as speed signs. 
+The model was able to correctly guess 8 of the 10 traffic signs, which gives an accuracy of 80%. This is not an ideal accuracy compared to the testing accuracy of 94.8%. Nonetheless, The mistakes that occurred were in detecting the actual numbers on the speed signs even though it identified the images as speed signs. This clearly indicates the main shortcoming of the NN model as number classification as it performed perfectly otherwise. Possible improvement that can be done in the future is separately applying the LeNet architecture on images that were identified as speed signs. 
 
 #### 3. Describe how certain the model is when predicting on each of the  new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -198,9 +197,12 @@ A random image from the training set was used to visualize the convolutional lay
 ![alt_text][image10]
 
 * First covnet:
+This layer seems to apply different transformations to the original layer as some images exhibit certain features such as: sharp edges, blurriness, dark and so forth. However, some channels in this layer appear similar which might indicate that this layer contains more channels than necessary. 
+
 ![alt_text][image11]
 
 * Second covnet:
+The features detected by this layer are hard to comprehend.
 ![alt_text][image12]
 
 
