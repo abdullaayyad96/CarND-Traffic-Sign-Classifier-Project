@@ -1,2 +1,2 @@
-Due to the size of the traffix sign data set it was not included in the reposatory, it can be downloaded from:
+Due to the size of the traffic sign data set it was not included in the repository, it can be downloaded from:
 https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip
