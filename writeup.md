@@ -17,18 +17,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./Images/sample_data.jpg "Visualization"
-[image2]: ./Images/training_set_bar.jpg "Training Set Distribution"
-[image3]: ./Images/data_aug_sample.jpg "Augmentation"
-[image4]: ./Images/training_augmented_set_bar.jpg "Distribution after Augmentation"
-[image5]: ./Images/data_gray_sample.jpg "Grayscaling"
-[image6]: ./Images/testing_set_sample.jpg "Testing Results"
-[image7]: ./Images/additional_images.jpg "Additional Images for testing"
-[image8]: ./Images/additional_images_result.jpg "Classification results for additional images"
-[image9]: ./Images/softmax_probabilities.jpg "Softmax probabilites for the Additional images"
-[image10]: ./Images/vis_sample_img.jpg "Sample Image for NN Visualization"
-[image11]: ./Images/first_covnet_layer.png "First CNN Layer Visualization"
-[image12]: ./Images/second_covnet_layer.png "Second CNN Layer Visualization"
+[image1]: ./writeup_images/sample_data.jpg "Visualization"
+[image2]: ./writeup_images/training_set_bar.jpg "Training Set Distribution"
+[image3]: ./writeup_images/data_aug_sample.jpg "Augmentation"
+[image4]: ./writeup_images/training_augmented_set_bar.jpg "Distribution after Augmentation"
+[image5]: ./writeup_images/data_gray_sample.jpg "Grayscaling"
+[image6]: ./writeup_images/testing_set_sample.jpg "Testing Results"
+[image7]: ./writeup_images/additional_images.jpg "Additional Images for testing"
+[image8]: ./writeup_images/additional_images_result.jpg "Classification results for additional images"
+[image9]: ./writeup_images/softmax_probabilities.jpg "Softmax probabilites for the Additional images"
+[image10]: ./writeup_images/vis_sample_img.jpg "Sample Image for NN Visualization"
+[image11]: ./writeup_images/first_covnet_layer.png "First CNN Layer Visualization"
+[image12]: ./writeup_images/second_covnet_layer.png "Second CNN Layer Visualization"
 
 
 ## Rubric Points
