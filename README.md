@@ -44,6 +44,6 @@ The below figure shows the result of runnung the NN on some images on the testin
 ### Neural Network Architecture
 ---
 The NN used in this project utilizes a 2-stage ConvNet architecture with layer skipping follower by a couple fully connected layers. This architecture is highly inspired by this [paper](https://ieeexplore.ieee.org/document/6033589). A simple illustration of the NN can be seen below:
-![NN_architecture](writeup_images/NN_architecture.wmf)
+![NN_architecture](writeup_images/NN_architecture.jpg)
 
 For more details regarding the neural network and the technical implementation, refer to the project's [technical writeup](technical_writeup.md) or [jupyter notebook](Traffic_Sign_Classifier.ipynb).

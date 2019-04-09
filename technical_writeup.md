@@ -22,7 +22,7 @@ The goals / steps of this project are the following:
 [image3]: ./writeup_images/data_aug_sample.jpg "Augmentation"
 [image4]: ./writeup_images/training_augmented_set_bar.jpg "Distribution after Augmentation"
 [image5]: ./writeup_images/data_gray_sample.jpg "Grayscaling"
-[image6]: ./writeup_images/NN_architecture.wmf "NN model"
+[image6]: ./writeup_images/NN_architecture.jpg "NN model"
 [image7]: ./writeup_images/testing_set_sample.jpg "Testing Results"
 [image8]: ./writeup_images/additional_images.jpg "Additional Images for testing"
 [image9]: ./writeup_images/additional_images_result.jpg "Classification results for additional images"
