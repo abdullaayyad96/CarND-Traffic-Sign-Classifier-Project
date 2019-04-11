@@ -14,6 +14,8 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+This project was implemented to meet the rubric found here: [rubric points](https://review.udacity.com/#!/rubrics/481/view) 
+
 
 [//]: # (Image References)
 
@@ -32,12 +34,8 @@ The goals / steps of this project are the following:
 [image13]: ./writeup_images/second_covnet_layer.png "Second CNN Layer Visualization"
 
 
-## Rubric Points
-### This project was implemented to meet the rubric found here: [rubric points](https://review.udacity.com/#!/rubrics/481/view) 
+## Data Set Summary & Exploration
 
-
-### Data Set Summary & Exploration
----
 
 #### 1. Summary of the data set. 
 
@@ -63,8 +61,7 @@ The following bar chart shows the distribution of the training set data across t
 
 ![alt text][image2]
 
-### Design and Test a Model Architecture
----
+## Designing and Training a Model Architecture
 
 #### 1. Preprocessing the data. 
 
@@ -157,8 +154,7 @@ The following figure shows random samples of the testing set along with the NN m
 
 ![alt_text][image7]
 
-### Testing the Model on New Images
----
+## Testing the Model on New Images
 
 ##### 1. Choose new German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 

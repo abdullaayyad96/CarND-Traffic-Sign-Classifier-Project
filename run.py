@@ -114,10 +114,10 @@ def main(argvs):
 		if (input_dir[-1] != "/") and (input_dir[-3:].upper() != "JPG"):
 			input_dir += "/"
 		
-		if (output_dir[-1] != "/") and (output_dir[-3:].upper() != "JPG"):
+		if (output_dir[-1] != "/")):
 			output_dir += "/"
 	else:
-		print("2 arguments are required, only %s were provided" % (len(argvs)-1))
+		print("Please provide the path to a .jpg image")
 		sys.exit()	
 		
 	img_list, file_names = load_images(input_dir)	

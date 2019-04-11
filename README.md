@@ -1,8 +1,8 @@
 ## Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-### Overview
----
+## Overview
+
 In this project, a convolutional neural networks is implemented and trained using `tensorflow` to classify traffic signs. The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) was used to train and validate the model. The model can then be used to classify images of any set of traffic sign images.
 
 The goals / steps of this project are the following:
@@ -15,8 +15,8 @@ The goals / steps of this project are the following:
 
 The project was built to meet this [rubric](https://review.udacity.com/#!/rubrics/481/view).
 
-### Dependencies
----
+## Dependencies
+
 * Python3 
 * Tensorflow
 * NumPy
@@ -25,8 +25,8 @@ The project was built to meet this [rubric](https://review.udacity.com/#!/rubric
 
 All the required packages can be found in Udacity's CarND Term1 conda environment. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
 
-### Usage
----
+## Usage
+
 To run the CNN to classify a traffic sign jpg image, run the following command:
 ```
 python run.py input_image output_directory
@@ -41,8 +41,8 @@ Some sample test images are provided in `test_images/` with their respective out
 The below figure shows the result of runnung the NN on some images on the testing set of [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset):
 ![test_images](writeup_images/testing_set_sample.jpg) 
 
-### Neural Network Architecture
----
+## Neural Network Architecture
+
 The NN used in this project utilizes a 2-stage ConvNet architecture with layer skipping follower by a couple fully connected layers. This architecture is highly inspired by this [paper](https://ieeexplore.ieee.org/document/6033589). A simple illustration of the NN can be seen below:
 ![NN_architecture](writeup_images/NN_architecture.jpg)
 
