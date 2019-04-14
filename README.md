@@ -5,6 +5,8 @@
 
 In this project, a convolutional neural networks is implemented and trained using `tensorflow` to classify traffic signs. The [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) was used to train and validate the model. The model can then be used to classify images of any set of traffic sign images.
 
+![Overview](writeup_images/overview.jpg)
+
 The goals / steps of this project are the following:
 * Load the data set
 * Explore, summarize and visualize the data set
