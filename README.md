@@ -38,9 +38,11 @@ The python script will run the classification process and generate copies of the
 
 In case of multiple images, all the images must be placed in the same folder and the path to folder should be passed as the input_image.
 
-Some sample test images are provided in `test_images/` with their respective outputs being in `test_output/`.
+## Testing the deep learning model
 
-The below figure shows the result of runnung the NN on some images on the testing set of [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset):
+Several sample test images are provided in `test_images/` with their respective outputs being in `test_output/`.
+
+Moreover, The below figure shows the result of runnung the NN on some images on the testing set of [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset):
 ![test_images](writeup_images/testing_set_sample.jpg) 
 
 ## Neural Network Architecture
